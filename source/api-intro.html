@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Daichi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.min.css" type="text/css">
+</head>
+
+<body>
+  <main class="api">
+    <div class="api_left-column">
+      <div class="api_menu">
+        <a class="api_menu-item" href="api.html">Версии API</a>
+        <a class="api_menu-item  api_menu-item--active">Общие входные параметры</a>
+        <a class="api_menu-item" href="">Авторизация</a>
+        <a class="api_menu-item" href="">Обновление токена</a>
+        <a class="api_menu-item" href="">Выход из системы</a>
+        <a class="api_menu-item" href="">Получение списка устройств</a>
+        <a class="api_menu-item" href="">Получение информации по конкретному устройству</a>
+        <a class="api_menu-item" href="">Управление устройством</a>
+      </div>
+    </div>
+    <div class="api_content">
+      <h1 class="api_title">Общие входные параметры</h1>
+
+      <pre class="api_code-block"><code class="api_code">POST/GET https://split.daichicloud.ru/api/open/<версия>/<метод>?<параметры></code></pre>
+
+      <div class="api_table-block">
+        <table class="api_table">
+          <caption></caption>
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:5%">
+            <col style="width:10%">
+            <col style="width:5%">
+            <col style="width:70%">
+          </colgroup>
+          <tr>
+            <th>Параметр</th>
+            <th>Положение</th>
+            <th>Тип</th>
+            <th>Обязательный</th>
+            <th>Описание</th>
+          </tr>
+          <tr>
+            <td><span class="code">version</span></td>
+            <td><span class="code">Path</span></td>
+            <td><span class="code">Enum</span></td>
+            <td>Да</td>
+            <td>Версия API.</td>
+          </tr>
+          <tr>
+            <td><span class="code">Accept</span></td>
+            <td><span class="code">Header</span></td>
+            <td><span class="code">MIME</span></td>
+            <td>Да</td>
+            <td>Параметр контента для выходных данных. Указать application/json</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>Content-Type</nobr></span></td>
+            <td><span class="code">Header</span></td>
+            <td><span class="code">MIME</span></td>
+            <td>Нет</td>
+            <td>Параметр контента для входных данных. Указать application/json при использовании формы json.</td>
+          </tr>
+          <td><span class="code">Authorization</span></td>
+          <td><span class="code">Header</span></td>
+          <td><span class="code">String</span></td>
+          <td>Да(*)</td>
+          <td>Авторизационный ключ (access_token), получаемый в методе авторизации auth. Обязательный параметр для всех методов кроме Авторизации (auth) и Обновления токена (auth/token/refresh).</td>
+        </tr>
+        </table>
+      </div>
+      <!-- <div class="api_pagination">
+        <a class="api_pagination-link" href="#">
+          Предыдущая
+          <span>Версии API</span>
+        </a>
+        <a class="api_pagination-link">
+          Следующая
+          <span>Авторизация</span>
+        </a>
+      </div> -->
+    </div>
+    <!-- <div class="api_right-column"></div> -->
+  </main>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/script.min.js"></script>
+</body>
+</html>
