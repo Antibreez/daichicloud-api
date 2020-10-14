@@ -397,7 +397,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 20px;
 }
 
 body.popup {
@@ -540,8 +540,30 @@ a {
   margin-bottom: 30px;
   background-color: #f8f8f8;
   width: 700px;
+  font-size: 15px;
   word-break: break-all;
   overflow-x: auto;
+}
+
+.api_code {
+  font-family: "Courier", monospace;
+  font-size: 15px;
+}
+
+.api_table-block {
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.api_text-block {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.api_subtitle {
+  margin: 50px 0 30px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .api_table {
@@ -565,13 +587,13 @@ a {
 }
 
 .api_table .code {
-  font-family: "Courier", sans-serif;
+  font-family: "Courier", monospace;
 }
 
 .api_table .marker {
   padding: 5px;
   margin: 0 5px;
-  font-family: "Courier", sans-serif;
+  font-family: "Courier", monospace;
   background-color: #efefef;
 }
 

@@ -14,7 +14,7 @@
       <div class="api_menu">
         <a class="api_menu-item" href="api.html">Версии API</a>
         <a class="api_menu-item  api_menu-item--active">Общие входные параметры</a>
-        <a class="api_menu-item" href="">Авторизация</a>
+        <a class="api_menu-item" href="authorization.html">Авторизация</a>
         <a class="api_menu-item" href="">Обновление токена</a>
         <a class="api_menu-item" href="">Выход из системы</a>
         <a class="api_menu-item" href="">Получение списка устройств</a>
@@ -73,6 +73,27 @@
         </tr>
         </table>
       </div>
+      <p class="api_text-block">
+        HTTP POST, GET запросы можно отправлять как в обычном формате <nobr>(Content-Type: application/x-www-form-urlencoded
+          || multipart/form-data)</nobr>, так и в виде json. Далее в примерах для удобства просмотра все входные и
+        выходные параметры запросов описываются в json-формате.
+      </p>
+      <p class="api_text-block">
+        Индикатором выполнения запросов служат стандартный <a class="api_link" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP">http status code:</a><br>
+        <strong>2xx</strong> - успешное выполнение<br>
+        <strong>4xx</strong> - ошибки на стороне клиента<br>
+        <strong>5хх</strong> - ошибки на стороне сервера<br>
+      </p>
+      <h2 class="api_subtitle">Пример ответа при ошибке</h2>
+      <pre class="api_code-block"><code class="api_code">Response:
+Status: 422
+{
+  "errors": {
+      "device": "Нет доступа к устройству"
+  },
+  "message": "Нет доступа к устройству"
+}
+        </code></pre>
       <!-- <div class="api_pagination">
         <a class="api_pagination-link" href="#">
           Предыдущая

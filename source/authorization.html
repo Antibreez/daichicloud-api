@@ -13,8 +13,8 @@
     <div class="api_left-column">
       <div class="api_menu">
         <a class="api_menu-item" href="api.html">Версии API</a>
-        <a class="api_menu-item  api_menu-item--active">Общие входные параметры</a>
-        <a class="api_menu-item" href="authorization.html">Авторизация</a>
+        <a class="api_menu-item" href="api-intro.html">Общие входные параметры</a>
+        <a class="api_menu-item  api_menu-item--active">Авторизация</a>
         <a class="api_menu-item" href="">Обновление токена</a>
         <a class="api_menu-item" href="">Выход из системы</a>
         <a class="api_menu-item" href="">Получение списка устройств</a>
@@ -23,9 +23,13 @@
       </div>
     </div>
     <div class="api_content">
-      <h1 class="api_title">Общие входные параметры</h1>
+      <h1 class="api_title">Авторизация</h1>
+      <p class="api_text-block">Получение авторизационного ключа.</p>
 
-      <pre class="api_code-block"><code class="api_code">POST/GET https://split.daichicloud.ru/api/open/<версия>/<метод>?<параметры></параметры></метод></версия></code></pre>
+      <pre class="api_code-block"><code class="api_code">Method: POST
+Path: /auth</code></pre>
+
+      <h2 class="api_subtitle">Входные параметры</h2>
 
       <div class="api_table-block">
         <table class="api_table">
@@ -45,32 +49,26 @@
             <th>Описание</th>
           </tr>
           <tr>
-            <td><span class="code">version</span></td>
+            <td><span class="code">email</span></td>
             <td><span class="code">Path</span></td>
-            <td><span class="code">Enum</span></td>
+            <td><span class="code">String</span></td>
             <td>Да</td>
-            <td>Версия API.</td>
+            <td>Данные аккаунта на <a class="api_link" href="https://split.daichicloud.ru/">daichicloud.ru.</a></td>
           </tr>
           <tr>
-            <td><span class="code">Accept</span></td>
-            <td><span class="code">Header</span></td>
-            <td><span class="code">MIME</span></td>
+            <td><span class="code">password</span></td>
+            <td><span class="code">Path</span></td>
+            <td><span class="code">String</span></td>
             <td>Да</td>
-            <td>Параметр контента для выходных данных. Указать application/json</td>
+            <td>Данные аккаунта на <a class="api_link" href="https://split.daichicloud.ru/">daichicloud.ru.</a></td>
           </tr>
           <tr>
-            <td><span class="code"><nobr>Content-Type</nobr></span></td>
-            <td><span class="code">Header</span></td>
-            <td><span class="code">MIME</span></td>
-            <td>Нет</td>
-            <td>Параметр контента для входных данных. Указать application/json при использовании формы json.</td>
+            <td><span class="code"><nobr>client_id</nobr></span></td>
+            <td><span class="code">Path</span></td>
+            <td><span class="code">String</span></td>
+            <td>Да</td>
+            <td>API-ключ. Предоставляется компанией Даичи.</td>
           </tr>
-          <td><span class="code">Authorization</span></td>
-          <td><span class="code">Header</span></td>
-          <td><span class="code">String</span></td>
-          <td>Да(*)</td>
-          <td>Авторизационный ключ (access_token), получаемый в методе авторизации auth. Обязательный параметр для всех методов кроме Авторизации (auth) и Обновления токена (auth/token/refresh).</td>
-        
         </table>
       </div>
       <p class="api_text-block">

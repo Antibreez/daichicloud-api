@@ -80,8 +80,32 @@
   background-color: #f8f8f8;
   width: 700px;
 
+  font-size: 15px;
+
   word-break: break-all;
   overflow-x: auto;
+}
+
+.api_code {
+  font-family: $code-font;
+  font-size: 15px;
+}
+
+.api_table-block {
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.api_text-block {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.api_subtitle {
+  margin: 50px 0 30px;
+
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .api_table {
