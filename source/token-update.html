@@ -14,8 +14,8 @@
       <div class="api_menu">
         <a class="api_menu-item" href="api.html">Версии API</a>
         <a class="api_menu-item" href="api-intro.html">Общие входные параметры</a>
-        <a class="api_menu-item  api_menu-item--active">Авторизация</a>
-        <a class="api_menu-item" href="token-update.html">Обновление токена</a>
+        <a class="api_menu-item" href="authorization.html">Авторизация</a>
+        <a class="api_menu-item  api_menu-item--active">Обновление токена</a>
         <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
         <a class="api_menu-item" href="get-devices.html">Получение списка устройств</a>
         <a class="api_menu-item" href="">Получение информации по конкретному устройству</a>
@@ -23,11 +23,12 @@
       </div>
     </div>
     <div class="api_content">
-      <h1 class="api_title">Авторизация</h1>
-      <p class="api_text-block">Получение авторизационного ключа.</p>
+      <h1 class="api_title">Обновление токена</h1>
+      <p class="api_text-block">Обновление авторизационного ключа.</p>
 
       <pre class="api_code-block"><code class="api_code">Method: POST
-Path: /auth</code></pre>
+Path: /auth/token/refresh
+</code></pre>
 
       <h2 class="api_subtitle">Входные параметры</h2>
 
@@ -49,25 +50,18 @@ Path: /auth</code></pre>
             <th>Описание</th>
           </tr>
           <tr>
-            <td><span class="code">email</span></td>
+            <td><span class="code"><nobr>refresh_token</nobr></span></td>
             <td><span class="code">Path</span></td>
             <td><span class="code">String</span></td>
             <td>Да</td>
-            <td>Данные аккаунта на <a class="api_link" href="https://split.daichicloud.ru/">daichicloud.ru.</a></td>
-          </tr>
-          <tr>
-            <td><span class="code">password</span></td>
-            <td><span class="code">Path</span></td>
-            <td><span class="code">String</span></td>
-            <td>Да</td>
-            <td>Данные аккаунта на <a class="api_link" href="https://split.daichicloud.ru/">daichicloud.ru.</a></td>
+            <td>Токен для обновления авторизационного ключа.</a></td>
           </tr>
           <tr>
             <td><span class="code"><nobr>client_id</nobr></span></td>
             <td><span class="code">Path</span></td>
             <td><span class="code">String</span></td>
             <td>Да</td>
-            <td>API-ключ. Предоставляется компанией Даичи.</td>
+            <td>API-ключ. Предоставляется компанией Даичи.</a></td>
           </tr>
         </table>
       </div>
@@ -105,9 +99,8 @@ Path: /auth</code></pre>
       </div>
       <p>Request:</p>
       <pre class="api_code-block"><code class="api_code">{
-  "email": "test@mail.ru",
-  "password": "qwerty",
-  "client_id": "fsdfjhfjhfhfjksdhfkkjs"
+  "refresh_token": "dsfsdfsdfsdfsdfsdfsdfsdfsdf",
+  "client_id": "weweqweqcrnhtynetynsf"
 }
 </code></pre>
 
@@ -115,9 +108,8 @@ Path: /auth</code></pre>
       <pre class="api_code-block"><code class="api_code">{
   "access_token": "dsfsdfsdfsdfsdfsdfsdfsdfsdf",
   "refresh_token": "weweqweqcrnhtynetynsf",
-  "expire_in": 1209600
+  "expire_in": 864000
 }
-
 </code></pre>
 
 

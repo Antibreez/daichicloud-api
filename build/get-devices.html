@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Daichi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.min.css" type="text/css">
+</head>
+
+<body>
+  <main class="api">
+    <div class="api_left-column">
+      <div class="api_menu">
+        <a class="api_menu-item" href="api.html">Версии API</a>
+        <a class="api_menu-item" href="api-intro.html">Общие входные параметры</a>
+        <a class="api_menu-item" href="authorization.html">Авторизация</a>
+        <a class="api_menu-item" href="token-update.html">Обновление токена</a>
+        <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
+        <a class="api_menu-item  api_menu-item--active">Получение списка устройств</a>
+        <a class="api_menu-item" href="">Получение информации по конкретному устройству</a>
+        <a class="api_menu-item" href="">Управление устройством</a>
+      </div>
+    </div>
+    <div class="api_content">
+      <h1 class="api_title">Получение списка устройств</h1>
+      <p class="api_text-block">Получение информации обо всех кондиционерах текущего аккаунта.</p>
+
+      <pre class="api_code-block"><code class="api_code">Method: GET
+Path: /devices
+</code></pre>
+
+      <h2 class="api_subtitle">Входные параметры</h2>
+
+      <div class="api_table-block">
+        <table class="api_table">
+          <caption></caption>
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:5%">
+            <col style="width:10%">
+            <col style="width:5%">
+            <col style="width:70%">
+          </colgroup>
+          <tr>
+            <th>Параметр</th>
+            <th>Положение</th>
+            <th>Тип</th>
+            <th>Обязательный</th>
+            <th>Описание</th>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>Authorization</nobr></span></td>
+            <td><span class="code">Header</span></td>
+            <td><span class="code">String</span></td>
+            <td>Да</td>
+            <td>Авторизационный ключ.</td>
+          </tr>
+        </table>
+      </div>
+      <h2 class="api_subtitle">Выходные параметры</h2>
+
+      <div class="api_table-block">
+        <table class="api_table">
+          <caption></caption>
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:5%">
+            <col style="width:70%">
+          </colgroup>
+          <tr>
+            <th>Параметр</th>
+            <th>Тип</th>
+            <th>Описание</th>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>devices</nobr></span></td>
+            <td><span class="code"><nobr>Object list</nobr></span></td>
+            <td><span>Список устройств.</span></td>
+          </tr>
+          <tr>
+            <td colspan="3">Параметры, вложенные в devices</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>id</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Идентификатор устройства.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>title</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Наименование помещения.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>building</nobr></span></td>
+            <td><span class="code"><nobr>Object</nobr></span></td>
+            <td><span>Информация об объекте.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>deviceState</nobr></span></td>
+            <td><span class="code"><nobr>Object</nobr></span></td>
+            <td><span>Информация о текущем состоянии кондиционера.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>supportedCtrl</nobr></span></td>
+            <td><span class="code"><nobr>Object</nobr></span></td>
+            <td><span>Информация о поддерживаемых режимах работы кондиционера (для использования в методе управления кондиционером).</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>deviceInfo</nobr></span></td>
+            <td><span class="code"><nobr>Object</nobr></span></td>
+            <td><span>Информация о модели кондиционера.</span></td>
+          </tr>
+          <tr>
+            <td colspan="3">Параметры, вложенные в building</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>id</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Идентификатор объекта.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>title</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Наименование объекта.</span></td>
+          </tr>
+          <tr>
+            <td colspan="3">Параметры, вложенные в deviceState</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>serialNo</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Серийный номер  Wi-Fi контроллера</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>status</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Статус подключения Wi-Fi контроллера к сети.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">connected - Wi-Fi контроллер подключен;</li>
+                <li class="api_content-item">disconnected - Wi-Fi контроллер не подключен.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>isOn</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Состояние работы кондиционера.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">0 - кондиционер выключен;</li>
+                <li class="api_content-item">1 - кондиционер включен.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>curTemp</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Текущая температура в помещении.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>setTemp</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Температура, установленная на кондиционере.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>mode</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Текущий режим работы кондиционера.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">auto - авто-режим;</li>
+                <li class="api_content-item">cool - охлождение;</li>
+                <li class="api_content-item">dry - осушение;</li>
+                <li class="api_content-item">heat - обогрев;</li>
+                <li class="api_content-item">vent - вентиляция.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>fanFlow</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Текущий режим работы заслонок обдува.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">off;</li>
+                <li class="api_content-item">flow3d;</li>
+                <li class="api_content-item">horizontal;</li>
+                <li class="api_content-item">vertical.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>fanSpeed</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Текущая скорость вращения вентилятора.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">0 - авто-режим;</li>
+                <li class="api_content-item">1;</li>
+                <li class="api_content-item">2;</li>
+                <li class="api_content-item">3;</li>
+                <li class="api_content-item">4;</li>
+                <li class="api_content-item">5;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">Параметры, вложенные в supportedCtrl</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>modes</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Поддерживаемые режимы работы кондиционера.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">auto - авто-режим;</li>
+                <li class="api_content-item">cool - охлождение;</li>
+                <li class="api_content-item">dry - осушение;</li>
+                <li class="api_content-item">heat - обогрев;</li>
+                <li class="api_content-item">vent - вентиляция.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>minTemp</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Минимальная температура, поддерживаемая кондиционером.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>maxTemp</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Максимальная температура, поддерживаемая кондиционером.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>fanSpeedCount</nobr></span></td>
+            <td><span class="code"><nobr>Int32</nobr></span></td>
+            <td><span>Количество скоростей вентилятора, поддерживаемых кондиционером.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>fanFlow</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>
+              Поддерживаемые режимы работы заслонок обдува.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">off;</li>
+                <li class="api_content-item">flow3d;</li>
+                <li class="api_content-item">horizontal;</li>
+                <li class="api_content-item">vertical.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">Параметры, вложенные в deviceInfo</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>brand</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Бренд кондиционера.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>model</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Модель (линейка) кондиционера.</span></td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>productNum</nobr></span></td>
+            <td><span class="code"><nobr>String</nobr></span></td>
+            <td><span>Продуктовый номер кондиционера.</span></td>
+          </tr>
+        </table>
+      </div>
+      <p>Request:</p>
+      <pre class="api_code-block"><code class="api_code">Empty</code></pre>
+
+      <p>Response:</p>
+      <pre class="api_code-block"><code class="api_code">{
+  "devices": [
+    {
+      "id": 30,
+      "title": "Детская",
+      "building": {
+        "id": 294,
+        "title": "Городская квартира"
+      },
+      "deviceState": {
+        "serialNo": "Daichi000001",
+        "status": "connected",
+        "isOn": 0,
+        "curTemp": 22,
+        "setTemp": 25,
+        "mode": "heat",
+        "fanFlow": "flow3D",
+        "fanSpeed": 1
+      },
+      "supportedCtrl": {
+        "modes": [
+          "auto",
+          "cool",
+          "dry",
+          "heat",
+          "vent"
+        ],
+        "minTemp": 18,
+        "maxTemp": 32,
+        "fanSpeedCount": 5,
+          "fanFlow": [
+          "off",
+          "vertical",
+          "horizontal",
+          "flow3D"
+        ]
+      },
+      "deviceInfo": {
+        "brand": "Daikin",
+        "model": "FTXS-J/G",
+        "productNum": "FTXS25J"
+      }
+    },
+    {
+...
+    }
+  ]
+}
+</code></pre>
+
+
+      <!-- <div class="api_pagination">
+        <a class="api_pagination-link" href="#">
+          Предыдущая
+          <span>Версии API</span>
+        </a>
+        <a class="api_pagination-link">
+          Следующая
+          <span>Авторизация</span>
+        </a>
+      </div> -->
+    </div>
+    <!-- <div class="api_right-column"></div> -->
+  </main>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/script.min.js"></script>
+</body>
+</html>
