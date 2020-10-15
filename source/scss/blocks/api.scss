@@ -207,6 +207,8 @@
   }
 
   .api_menu-item {
+    position: relative;
+
     width: 100%;
     padding: 15px 50px 15px 20px;
 
@@ -223,6 +225,22 @@
 
     &:last-of-type {
       border-bottom: 1px solid #ddd;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: 20px;
+
+      width: 10px;
+      height: 10px;
+
+      transform: translateY(-50%);
+      background-image: url('../img/right-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
     }
 
     &--active {
@@ -271,7 +289,7 @@
     border: none;
     background-color: transparent;
     background-image: url('../img/close.svg');
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 

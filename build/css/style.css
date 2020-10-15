@@ -638,6 +638,7 @@ a {
     text-align: center;
   }
   .api_menu-item {
+    position: relative;
     width: 100%;
     padding: 15px 50px 15px 20px;
     font-size: 14px;
@@ -651,6 +652,19 @@ a {
   }
   .api_menu-item:last-of-type {
     border-bottom: 1px solid #ddd;
+  }
+  .api_menu-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-image: url("../img/right-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
   }
   .api_menu-item--active {
     color: #000;
@@ -692,7 +706,7 @@ a {
     border: none;
     background-color: transparent;
     background-image: url("../img/close.svg");
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
   .api {
