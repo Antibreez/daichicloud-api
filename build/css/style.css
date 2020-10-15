@@ -515,6 +515,10 @@ a {
   display: none;
 }
 
+.api_mobile-close-button {
+  display: none;
+}
+
 .api_content {
   padding: 60px 30px;
   -webkit-box-flex: 1;
@@ -682,6 +686,7 @@ a {
     position: fixed;
     top: 20px;
     right: 20px;
+    display: block;
     width: 20px;
     height: 20px;
     border: none;
