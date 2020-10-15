@@ -701,7 +701,7 @@ a {
     top: 20px;
     right: 20px;
     display: inline-block;
-    width: 20px;
+    width: 20px !important;
     height: 20px;
     border: none;
     background-color: transparent;
