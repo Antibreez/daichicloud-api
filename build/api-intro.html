@@ -10,19 +10,22 @@
 
 <body>
   <main class="api">
-    <div class="api_left-column">
-      <div class="api_menu">
-        <a class="api_menu-item" href="api.html">Версии API</a>
-        <a class="api_menu-item  api_menu-item--active">Общие входные параметры</a>
-        <a class="api_menu-item" href="authorization.html">Авторизация</a>
-        <a class="api_menu-item" href="token-update.html">Обновление токена</a>
-        <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
-        <a class="api_menu-item" href="get-devices.html">Получение списка устройств</a>
-        <a class="api_menu-item" href="">Получение информации по конкретному устройству</a>
-        <a class="api_menu-item" href="">Управление устройством</a>
-      </div>
+    <div class="api_left-column"></div>
+    <div class="api_menu">
+      <p class="api_menu-title">Общие входные параметры</p>
+      <a class="api_menu-item" href="api.html">Версии API</a>
+      <a class="api_menu-item  api_menu-item--active">Общие входные параметры</a>
+      <a class="api_menu-item" href="authorization.html">Авторизация</a>
+      <a class="api_menu-item" href="token-update.html">Обновление токена</a>
+      <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
+      <a class="api_menu-item" href="get-devices.html">Получение списка устройств</a>
+      <a class="api_menu-item" href="device-information.html">Получение информации по конкретному устройству</a>
+      <a class="api_menu-item" href="device-control.html">Управление устройством</a>
+      <button class="api_mobile-close-button"></button>
     </div>
+
     <div class="api_content">
+      <div class="api_mobile-menu-bar"><button class="api_mobile-menu-button"></button></div>
       <h1 class="api_title">Общие входные параметры</h1>
 
       <pre class="api_code-block"><code class="api_code">POST/GET https://split.daichicloud.ru/api/open/<версия>/<метод>?<параметры></параметры></метод></версия></code></pre>
@@ -74,8 +77,8 @@
         </table>
       </div>
       <p class="api_text-block">
-        HTTP POST, GET запросы можно отправлять как в обычном формате <nobr>(Content-Type: application/x-www-form-urlencoded
-          || multipart/form-data)</nobr>, так и в виде json. Далее в примерах для удобства просмотра все входные и
+        HTTP POST, GET запросы можно отправлять как в обычном формате (Content-Type: application/x-www-form-urlencoded
+          || multipart/form-data), так и в виде json. Далее в примерах для удобства просмотра все входные и
         выходные параметры запросов описываются в json-формате.
       </p>
       <p class="api_text-block">

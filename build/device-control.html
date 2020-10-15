@@ -12,25 +12,25 @@
   <main class="api">
     <div class="api_left-column"></div>
     <div class="api_menu">
-      <p class="api_menu-title">Выход из системы</p>
+      <p class="api_menu-title">Управление устройством</p>
       <a class="api_menu-item" href="api.html">Версии API</a>
       <a class="api_menu-item" href="api-intro.html">Общие входные параметры</a>
       <a class="api_menu-item" href="authorization.html">Авторизация</a>
       <a class="api_menu-item" href="token-update.html">Обновление токена</a>
-      <a class="api_menu-item  api_menu-item--active">Выход из системы</a>
+      <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
       <a class="api_menu-item" href="get-devices.html">Получение списка устройств</a>
       <a class="api_menu-item" href="device-information.html">Получение информации по конкретному устройству</a>
-      <a class="api_menu-item" href="device-control.html">Управление устройством</a>
+      <a class="api_menu-item  api_menu-item--active">Управление устройством</a>
       <button class="api_mobile-close-button"></button>
     </div>
 
     <div class="api_content">
       <div class="api_mobile-menu-bar"><button class="api_mobile-menu-button"></button></div>
-      <h1 class="api_title">Выход из системы</h1>
-      <p class="api_text-block">Удаляет текущий авторизационный ключ.</p>
+      <h1 class="api_title">Управление устройством</h1>
+      <p class="api_text-block">Задание режима работы выбранному кондиционеру.</p>
 
       <pre class="api_code-block"><code class="api_code">Method: POST
-Path: /auth/logout
+Path: /devices/{id}/ctrl
 </code></pre>
 
       <h2 class="api_subtitle">Входные параметры</h2>
@@ -57,7 +57,38 @@ Path: /auth/logout
             <td><span class="code">Header</span></td>
             <td><span class="code">String</span></td>
             <td>Да</td>
-            <td>Авторизационный ключ.</a></td>
+            <td>Авторизационный ключ.</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>id</nobr></span></td>
+            <td><span class="code">Path</span></td>
+            <td><span class="code">Int32</span></td>
+            <td>Да</td>
+            <td>Идентификатор устройства.</td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>command</nobr></span></td>
+            <td><span class="code"><nobr>Path</nobr></span></td>
+            <td><span class="code"><nobr>Enum</nobr></span></td>
+            <td>Да</td>
+            <td>
+              Команда управления.<br>
+              Возможные значения:<br>
+              <ul class="api_content-list">
+                <li class="api_content-item">isOn - включить*выключить кондиционер;</li>
+                <li class="api_content-item">setTemp - установка температуры;</li>
+                <li class="api_content-item">mode - установка режима работы кондиционера;</li>
+                <li class="api_content-item">fanFlow - установка режима работы заслонок обдува;</li>
+                <li class="api_content-item">fanSpeed - установка скорости вращения вентилятора.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="code"><nobr>value</nobr></span></td>
+            <td><span class="code">Path</span></td>
+            <td><span class="code">Enum&nbsp;or Int32</span></td>
+            <td>Да</td>
+            <td>Соответствующее допустимое значение для команды управления. См. описание метода Получения списка устройств (объект supportedCtrl).</td>
           </tr>
         </table>
       </div>
@@ -84,7 +115,11 @@ Path: /auth/logout
         </table>
       </div>
       <p>Request:</p>
-      <pre class="api_code-block"><code class="api_code">Empty</code></pre>
+      <pre class="api_code-block"><code class="api_code">{
+  "command": "setTemp",
+  "value": 23
+}
+</code></pre>
 
       <p>Response:</p>
       <pre class="api_code-block"><code class="api_code">{

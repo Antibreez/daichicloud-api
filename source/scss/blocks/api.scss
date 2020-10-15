@@ -29,6 +29,11 @@
 
   background-color: #eee;
 }
+
+.api_menu-title {
+  display: none;
+}
+
 .api_menu-item {
   width: 100%;
   padding: 10px 20px;
@@ -45,6 +50,10 @@
 
     border-left: 3px solid $theme-color-1;
   }
+}
+
+.api_mobile-menu-bar {
+  display: none;
 }
 
 .api_content {
@@ -160,8 +169,105 @@
     display: none;
   }
 
+  .api_content {
+    padding: 100px 5%;
+
+    font-size: 14px;
+  }
+
   .api_menu {
     display: none;
+
+    width: 100%;
+    padding-top: 0;
+
+    background-color: #fff;
+
+    z-index: 1000;
+
+    &.js--show {
+      display: flex;
+    }
+  }
+
+  .api_menu-title {
+    display: block;
+
+    margin: 0;
+    padding: 20px 60px;
+
+    font-size: 15px;
+    line-height: 17px;
+
+    text-align: center;
+  }
+
+  .api_menu-item {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #000;
+
+    border-top: 1px solid #ddd;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid #ddd;
+    }
+
+    &--active {
+      color: #000;
+
+      border-left: none;
+    }
+  }
+
+  .api_mobile-menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding-left: 5%;
+
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 10;
+  }
+
+  .api_mobile-menu-button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/menu.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .api_mobile-close-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/close.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .api {
@@ -180,5 +286,25 @@
 
   .api_code-block {
     width: 100%;
+  }
+
+  .api_code {
+    font-size: 13px;
+  }
+
+  .api_table {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 767px) {
+  .api_title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .api_subtitle {
+    font-size: 20px;
+    line-height: 24px;
   }
 }
