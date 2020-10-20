@@ -21,7 +21,7 @@
 
   min-width: 260px;
   width: 260px;
-  padding: 50px 0;
+  padding: 150px 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -61,7 +61,7 @@
 }
 
 .api_content {
-  padding: 60px 30px;
+  padding: 140px 30px 60px;
   flex-grow: 1;
 }
 
@@ -260,10 +260,17 @@
     width: 100%;
     height: 60px;
     padding-left: 5%;
+    padding-right: 5%;
 
     border-bottom: 1px solid #ddd;
     background-color: #fff;
     z-index: 10;
+  }
+
+  .api_mobile-menu-link {
+    margin-left: auto;
+    width: 147px;
+    height: 19px;
   }
 
   .api_mobile-menu-button {
