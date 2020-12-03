@@ -42,11 +42,12 @@
   text-decoration: none;
   color: #000;
 
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+  // &:not(:last-child) {
+  //   margin-bottom: 20px;
+  // }
 
   &--active {
+    padding-left: 17px;
     color: $theme-color-1;
 
     border-left: 3px solid $theme-color-1;
@@ -87,9 +88,14 @@
   }
 }
 
+@media(min-width: 1021px) {
+  .api_menu-item--sub.api_menu-item--active {
+    padding-left: 37px;
+  }
+}
+
 .api_menu-submenu {
   display: none;
-  padding-bottom: 20px;
 }
 
 .api_mobile-menu-bar {
