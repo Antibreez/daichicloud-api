@@ -9,6 +9,11 @@
 </head>
 
 <body>
+  <header class="header">
+    <a href="api.html" class="header_link">
+      <img src="img/cloud-logo.svg" alt="Daichi Cloud">
+    </a>
+  </header>
   <main class="api">
     <div class="api_left-column"></div>
     <div class="api_menu">
@@ -25,7 +30,12 @@
     </div>
 
     <div class="api_content">
-      <div class="api_mobile-menu-bar"><button class="api_mobile-menu-button"></button></div>
+      <div class="api_mobile-menu-bar">
+        <button class="api_mobile-menu-button"></button>
+        <a class="api_mobile-menu-link" href="api.html">
+          <img src="img/cloud-logo-grey.svg" alt="Daichi Cloud">
+        </a>
+      </div>
       <h1 class="api_title">Общие входные параметры</h1>
 
       <pre class="api_code-block"><code class="api_code">POST/GET https://split.daichicloud.ru/api/open/<версия>/<метод>?<параметры></code></pre>

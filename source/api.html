@@ -9,13 +9,30 @@
 </head>
 
 <body>
+  <header class="header">
+    <a href="api.html" class="header_link">
+      <img src="img/cloud-logo.svg" alt="Daichi Cloud">
+    </a>
+  </header>
   <main class="api">
     <div class="api_left-column"></div>
     <div class="api_menu">
       <p class="api_menu-title">Версии API</p>
       <a class="api_menu-item  api_menu-item--active">Версии API</a>
       <a class="api_menu-item" href="api-intro.html">Общие входные параметры</a>
-      <a class="api_menu-item" href="authorization.html">Авторизация</a>
+      <a class="api_menu-item api_menu-item--title">Авторизация</a>
+      <div class="api_menu-submenu">
+        <a class="api_menu-item  api_menu-item--sub" href="sign-out.html">Метод 1</a>
+        <a class="api_menu-item  api_menu-item--sub" href="sign-out.html">Метод 2</a>
+        <a class="api_menu-item  api_menu-item--sub" href="sign-out.html">Метод 3</a>
+      </div>
+      <a class="api_menu-item api_menu-item--title">Oбъекты</a>
+      <div class="api_menu-submenu">
+        <a class="api_menu-item  api_menu-item--sub  api_menu-item--active" href="sign-out.html">Метод 1</a>
+        <a class="api_menu-item  api_menu-item--sub  api_menu-item--active" href="sign-out.html">Метод 1</a>
+        <a class="api_menu-item  api_menu-item--sub" href="sign-out.html">Метод 2</a>
+        <a class="api_menu-item  api_menu-item--sub" href="sign-out.html">Метод 3</a>
+      </div>
       <a class="api_menu-item" href="token-update.html">Обновление токена</a>
       <a class="api_menu-item" href="sign-out.html">Выход из системы</a>
       <a class="api_menu-item" href="get-devices.html">Получение списка устройств</a>
@@ -24,7 +41,12 @@
       <button class="api_mobile-close-button"></button>
     </div>
     <div class="api_content">
-      <div class="api_mobile-menu-bar"><button class="api_mobile-menu-button"></button></div>
+      <div class="api_mobile-menu-bar">
+        <button class="api_mobile-menu-button"></button>
+        <a class="api_mobile-menu-link" href="api.html">
+          <img src="img/cloud-logo-grey.svg" alt="Daichi Cloud">
+        </a>
+      </div>
       <h1 class="api_title">Версии API</h1>
       <div class="api_content-block">
         <ul class="api_content-list">
